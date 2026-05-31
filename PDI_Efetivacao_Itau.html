@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>PDI - Efetivação como Engenheiro de Software Júnior</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+            @bottom-right {
+                content: "Página " counter(page) " de " counter(pages);
+                font-size: 8pt;
+                font-family: 'Arial', sans-serif;
+                color: #718096;
+            }
+            @bottom-left {
+                content: "Itaú Unibanco - Corretora (NJ)";
+                font-size: 8pt;
+                font-family: 'Arial', sans-serif;
+                color: #718096;
+            }
+        }
+        
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.5;
+            color: #2d3748;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .header-container {
+            border-left: 6px solid #ec7000; /* Itaú Orange */
+            background-color: #004691; /* Itaú Deep Blue */
+            color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .header-container h1 {
+            margin: 0 0 6px 0;
+            font-size: 18pt;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-container p {
+            margin: 0;
+            font-size: 11pt;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .objective-box {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .objective-box h2 {
+            margin: 0 0 6px 0;
+            font-size: 11pt;
+            color: #004691;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .objective-box p {
+            margin: 0;
+            font-size: 11pt;
+            font-weight: bold;
+            color: #1a202c;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 13pt;
+            color: #004691;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: bold;
+            page-break-after: avoid;
+        }
+        
+        .section-objective {
+            font-size: 10.5pt;
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+        
+        .pillar-card {
+            background: #ffffff;
+            border: 1px solid #edf2f7;
+            border-left: 4px solid #004691;
+            padding: 12px 18px;
+            margin-bottom: 12px;
+            border-radius: 0 4px 4px 0;
+            page-break-inside: avoid;
+        }
+        
+        .pillar-card-title {
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 4px;
+            font-size: 11pt;
+        }
+        
+        .pillar-card-content {
+            color: #4a5568;
+            font-size: 10pt;
+            margin: 0;
+        }
+        
+        .bullet-list {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            margin-bottom: 4px;
+            color: #4a5568;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .timeline-table th {
+            background-color: #004691;
+            color: #ffffff;
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 10pt;
+            font-weight: bold;
+            border: 1px solid #004691;
+        }
+        
+        .timeline-table td {
+            padding: 12px 14px;
+            border: 1px solid #e2e8f0;
+            font-size: 10pt;
+            vertical-align: top;
+        }
+        
+        .timeline-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        
+        .action-item {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            page-break-inside: avoid;
+        }
+        
+        .action-header {
+            font-weight: bold;
+            color: #1a202c;
+        }
+        
+        .action-status {
+            display: inline-block;
+            font-size: 8.5pt;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        
+        .status-next-release {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+        }
+        
+        .status-next-sprint {
+            background-color: #feebc8;
+            color: #c05621;
+        }
+        
+        .status-active {
+            background-color: #c6f6d5;
+            color: #22543d;
+        }
+        
+        .status-year-end {
+            background-color: #edf2f7;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Plano de Desenvolvimento Individual (PDI)</h1>
+        <p>Alvo: Efetivação como Engenheiro de Software Júnior — Meta: Dezembro de 2026</p>
+    </div>
+
+    <div class="objective-box">
+        <h2>Objetivo Principal</h2>
+        <p>Oficializar a transição para Engenheiro de Software Júnior, consolidando a entrega de ponta a ponta na modernização do rebate de corretagem, ampliar o domínio das regras de negócio do NJ e obter a certificação ANBIMA CPA.</p>
+    </div>
+
+    <!-- PILLAR 1 -->
+    <div class="section">
+        <div class="section-title">1. Entregas de Valor e Protagonismo</div>
+        <div class="section-objective"><strong>Objetivo:</strong> Entregar o projeto de modernização com qualidade, comprovando capacidade de assumir responsabilidades de Júnior.</div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Projeto-Vitrine: Modernização de Sistemas Críticos</div>
+            <p class="pillar-card-content">Liderar a entrega da modernização das telas de <strong>Rebate de Corretagem</strong> e <strong>Troca de Comitente</strong>.</p>
+        </div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Resultados Esperados</div>
+            <ul class="bullet-list">
+                <li>Concluir o projeto completo (Rebate e Troca) até a <strong>Release 3 (Sprint 4)</strong>. Sendo a entrega do módulo de Rebate programada para a <strong>Release 2 (Sprint 3/4)</strong>.</li>
+                <li>Concluir com sucesso a migração total do ecossistema legado (.NET WebForms e Oracle) para a nova stack tecnológica (Angular, .NET 8+, PostgreSQL e AWS).</li>
+                <li>Garantir a transição fluida e segura do consumo de dados, migrando do modelo legado do Sinacor para a integração com a nova API do INOA.</li>
+            </ul>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-card-title">Atuação no RUN</div>
+            <p class="pillar-card-content">Assumir de forma gradativa a resolução de incidentes e demandas do dia a dia do Descomissionamento NJ, absorvendo a sustentação e aliviando diretamente a carga de trabalho do Gui e do Rabi.</p>
+        </div>
+    </div>
+
+    <!-- PILLAR 2 -->
+    <div class="section">
+        <div class="section-title">2. Excelência Técnica</div>
+        <div class="section-objective"><strong>Objetivo:</strong> Elevar a proficiência técnica, garantindo que o novo código seja escalável, testável e aderente aos padrões de arquitetura do banco.</div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Aprofundamento em .NET e Arquitetura</div>
+            <p class="pillar-card-content">Aplicar de forma rigorosa os princípios SOLID e Clean Architecture no desenvolvimento de todo o ecossistema de backend da nova plataforma.</p>
+        </div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Qualidade e Testes</div>
+            <p class="pillar-card-content">Direcionar foco estratégico em qualidade de código através da criação e manutenção de testes unitários consistentes (utilizando xUnit) para todas as novas APIs desenvolvidas, assegurando que as regras de negócio extraídas do legado permaneçam blindadas contra regressões.</p>
+        </div>
+
+        <div class="pillar-card">
+            <div class="pillar-card-title">Infraestrutura e Cloud (AWS)</div>
+            <p class="pillar-card-content">Consolidar a autonomia na criação e manutenção de infraestrutura na AWS e estruturação de repositórios no GitHub, garantindo o funcionamento perfeito de toda a esteira de CI/CD (deploy automático) para o frontend e o backend.</p>
+        </div>
+    </div>
+
+    <!-- PILLAR 3 -->
+    <div class="section">
+        <div class="section-title">3. Domínio de Negócio da Corretora</div>
+        <div class="section-objective"><strong>Objetivo:</strong> Elevar a atuação estratégica, deixando de atuar apenas como executor de código para se tornar um desenvolvedor com visão sistêmica e impacto real no negócio.</div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Certificação Profissional</div>
+            <p class="pillar-card-content">Obter a certificação CPA ANBIMA dentro do ciclo de vigência deste PDI, validando formalmente o conhecimento técnico sobre o mercado financeiro, de capitais e operações da corretora.</p>
+        </div>
+        
+        <div class="pillar-card">
+            <div class="pillar-card-title">Mapeamento de Regras Legadas</div>
+            <p class="pillar-card-content">Otimizar o uso de ferramentas de Inteligência Artificial (Devin) não apenas para aceleração de escrita de código, mas como aliada analítica para extrair, compreender, validar e documentar as regras de negócio complexas de Rebate e Troca que residem no legado.</p>
+        </div>
+    </div>
+
+    <!-- PILLAR 4 -->
+    <div class="section">
+        <div class="section-title">4. Plano de Ação e Linha do Tempo</div>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Período</th>
+                    <th style="width: 75%;">Foco Estratégico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mês 1 a 3</strong></td>
+                    <td>Foco total no mapeamento detalhado das regras via Devin para viabilizar as entregas rápidas de Rebate e Troca. Início da absorção de incidentes e chamados menores no Run junto ao Gui e Rabi.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mês 3 a 5</strong></td>
+                    <td>Consolidação técnica na nova stack corporativa e aprofundamento prático nas regras de negócio da squad.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mês 5 a 7</strong></td>
+                    <td>Atuação 100% autônoma no Run do Descomissionamento NJ e realização oficial da prova de certificação da CPA ANBIMA.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 15px; font-weight: bold; color: #004691; margin-bottom: 10px; page-break-after: avoid;">Ações Práticas Imediatas:</div>
+        
+        <div class="action-item">
+            <span class="action-header">Ação 1: Entrada direta na fila de incidentes e sustentação ("Run") do Descomissionamento.</span><br>
+            <span class="action-status status-next-release">Planejado: Ativação na próxima Release</span>
+        </div>
+        
+        <div class="action-item">
+            <span class="action-header">Ação 2: Documentar conquistas, arquiteturas e compartilhar ativamente o progresso nas Dailies e Plannings.</span><br>
+            <span class="action-status status-next-sprint">Planejado: Ativação na próxima Sprint</span>
+        </div>
+        
+        <div class="action-item">
+            <span class="action-header">Ação 3: Roteiro de Estudos Avançados .NET (Injeção de Dependência, Dapper, EF, Design Patterns e Laboratórios Cloud).</span><br>
+            <span class="action-status status-active">Status: Já em Execução</span>
+        </div>
+        
+        <div class="action-item">
+            <span class="action-header">Ação 4: Fixar cronograma de estudos dedicado e agendamento da data oficial para o exame ANBIMA.</span><br>
+            <span class="action-status status-year-end">Meta: Conclusão até o fim do ano</span>
+        </div>
+    </div>
+
+</body>
+</html>
